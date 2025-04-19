@@ -1,0 +1,77 @@
+[user]
+    name = Christopher Lopes
+    email = lopes@gonzaga.edu
+[core]
+    #longpaths = true
+    pager = delta
+    #autocrlf = false
+    #editor=code -w
+    editor="nvim"
+    #excludesfile = \\\\someplace\\somedirectory$\\.gitignore
+    #excludesfile = C:\\Users\\lopes\\.gitignore
+    #attributesfile = \\\\someplace\\somedirectory$\\.gitattributes
+[checkout]
+    defaultRemote = origin
+[push]
+    autoSetupRemote = true
+[interactive]
+    difffilter = delta --color-only --features=interactive
+[delta]
+    features = decorations
+[delta "interactive"]
+    keep-plus-minus-markers = false
+[delta "decorations"]
+    commit-decorative-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+[alias]
+    gr = log --graph --full-history --all --color --pretty=tformat:\"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m\"
+    gs = log --graph -10 --all --color --pretty=tformat:\"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m\"
+    gf = log -p -s 
+    s = status
+    l = log -n 1 --format=oneline
+    co = checkout
+    clear = !git reset --hard && git clean -f -d
+    find = log --pretty=\"format:%Cgreen%H %Cblue%s\" --name-status --grep
+    p = !git push $1 $2 && git log -n 1 --format=oneline && :
+    pf = !git push --force-with-lease $1 $2 && git log -n 1 --format=oneline && :
+    pushf = push --force-with-lease
+    a = commit -a --amend --no-edit
+#[diff]
+#    tool = nvimdiff
+#[difftool]
+#    prompt = false
+#[merge]
+#    tool = nvimdiff
+#[mergetool "gvimdiff"]
+#    prompt = false
+#    tool = nvimdiff
+#    #cmd = "nvim-qt -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+#    #trustExitCode = true
+#[mergetool "nvimdiff"]
+#    cmd = nvim-qt -d $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
+#    trustExitCode = true
+#[mergetool]
+#    keepBackup = false
+#[url "https://"]
+#    insteadOf = git://
+#[rerere]
+#	enabled = true
+#[commit]
+#	verbose = true
+#[credential]
+#	helper = manager
+#	helper = 
+#	helper = C:/Users/lopes/.dotnet/tools/git-credential-manager.exe
+[init]
+	defaultBranch = main
+#[credential "helperselector"]
+#	selected = manager
+#[credential "https://github.com"]
+#	username = GitHubUserName
+#[credential "https://dev.azure.com"]
+#	useHttpPath = true
