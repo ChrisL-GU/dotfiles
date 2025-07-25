@@ -75,3 +75,5 @@
 #	username = GitHubUserName
 #[credential "https://dev.azure.com"]
 #	useHttpPath = true
+[commit]
+	verbose = true
