@@ -31,5 +31,3 @@ source /home/lopes/.config/broot/launcher/bash/br
 
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
-
-

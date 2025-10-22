@@ -16,7 +16,7 @@ set -x EDITOR "nvim"
 set -x VISUAL "nvim"
 
 set -x NPM_INSTALL "$HOME/.npm-global"
-set -gx PATH $PATH $NPM_INSTALL
+set -gx PATH $PATH "$NPM_INSTALL/bin"
 
 set -gx PATH $PATH "$HOME/.bin"
 
@@ -26,3 +26,6 @@ alias ....="cd ../../.."
 
 zoxide init fish | source
 starship init fish | source
+
+# opencode
+fish_add_path /home/lopes/.opencode/bin
